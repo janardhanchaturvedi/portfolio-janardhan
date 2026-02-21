@@ -22,10 +22,14 @@ export class SideBarApp extends Component {
     }
 
     openApp = () => {
-        if (!this.props.isMinimized[this.id] && this.props.isClose[this.id]) {
-            this.scaleImage();
+        if (this.props.isExternalApp && this.props.url) {
+            window.open(this.props.url, "_blank");
+        } else {
+            if (!this.props.isMinimized[this.id] && this.props.isClose[this.id]) {
+                this.scaleImage();
+            }
+            this.props.openApp(this.id);
         }
-        this.props.openApp(this.id);
         this.setState({ showTitle: false });
     };
 

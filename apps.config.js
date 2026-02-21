@@ -109,7 +109,8 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
-        url: "https://www.vivek9patel.com/tars"
+        url: "https://www.vivek9patel.com/tars",
+        screen: () => {},
     },
 ]
 
